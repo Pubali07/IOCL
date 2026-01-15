@@ -1,17 +1,8 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        products: resolve(__dirname, 'products.html'),
-        services: resolve(__dirname, 'services.html'),
-        careers: resolve(__dirname, 'careers.html'),
-        contact: resolve(__dirname, 'contact.html'),
-      },
-    },
-  },
+  plugins: [react()],
+  base: '/iocl-website/',
 });
